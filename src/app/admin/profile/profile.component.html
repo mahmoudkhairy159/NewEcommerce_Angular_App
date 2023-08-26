@@ -1,0 +1,49 @@
+<section class="section profile">
+    <div class="row">
+        <div class="col-xl-4">
+
+            <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                    <img src="../assets/themes/my-theme/media/photos/photo1.jpg" alt="Profile" class="img-avatar img-avatar-thumb">
+                    <h2>{{ admin.name }}</h2>
+                    <h3>{{ admin.email}}</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+            <div class="card">
+                <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered" role="tablist">
+
+                        <li class="nav-item">
+                            <button class="nav-link" [routerLink]="['/admin/dashboard/profile',adminData.id]" routerLinkActive="router-link-active">Overview</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" [routerLink]="['/admin/dashboard/profile/update',adminData.id]">Edit Profile</button>
+                        </li>
+                        <li class=" nav-item ">
+                            <button class="nav-link" [routerLink]="['/admin/dashboard/profile/changePassword',adminData.id]">Change Password</button>
+                        </li>
+
+
+
+                    </ul>
+                    <div class="tab-content pt-2 ">
+
+                        <div class="tab-pane fade profile-overview active show " id="profile-overview " role="tabpanel ">
+                            <router-outlet></router-outlet>
+
+                        </div>
+                    </div>
+                    <!-- End Bordered Tabs -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

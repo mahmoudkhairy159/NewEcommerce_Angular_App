@@ -1,0 +1,55 @@
+<div class="block-content">
+    <button type="button" class="btn btn-success btn-outline-light mr-1 mb-3" [routerLink]="['/admin/dashboard/brands/create']">
+    <i class="fa fa-fw fa-plus mr-1"></i> New Brand
+</button>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-vcenter">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        #
+                    </th>
+                    <th style="width: 100px;">Photo</th>
+                    <th>Name</th>
+                    <th style="width: 30%;">category</th>
+                    <th style="width: 15%;">type</th>
+                    <th class="text-center" style="width: 100px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let brand of brands; let i=index">
+                    <td class="text-center">
+                        {{i+1}}
+                    </td>
+                    <td class="text-center">
+                        <img class="img-avatar img-avatar48" src="../assets/themes/my-theme/media/photos/photo1.jpg" alt=" ">
+                    </td>
+                    <td class="font-w600 font-size-sm ">
+                        <a>{{ brand.name }}</a>
+                    </td>
+                    <td class="font-w600 font-size-sm ">
+                        <a>{{ brand.category_value }}</a>
+                    </td>
+                    <td class="font-w600 font-size-sm ">
+                        <a> {{   brand.type_value }}</a>
+                    </td>
+
+                    <td class="text-center ">
+                        <div class="btn-group ">
+                            <button type="button " class="btn btn-sm btn-primary " title="Show" [routerLink]="['/admin/dashboard/brands/show',brand.id]">
+            <i class="fas fa-eye "></i>
+          </button>
+                            <button type="button " class="btn btn-sm btn-primary " title="Edit" [routerLink]="['/admin/dashboard/brands/update',brand.id,sendData(brand)]">
+            <i class="fa fa-fw fa-pencil-alt "></i>
+          </button>
+                            <button type="button " class="btn btn-sm btn-primary " (click)="onDeleteBrand(brand.id)" title="Delete">
+            <i class="fa fa-fw fa-times "></i>
+          </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

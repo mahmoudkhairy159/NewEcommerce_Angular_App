@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <form action="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control form-control-lg form-control-alt" name="name" placeholder="Enter Product Name">
+        </div>
+        <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <textarea class="form-control" name="description" rows="4" placeholder="Enter Product Description  "></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="productPrice">Price</label>
+                <input type="number" class="form-control" name="price" value="20">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="productAvailability">Availability</label>
+                <select class="form-control valid" name="availability" aria-describedby="val-skill-error" aria-invalid="false">
+                  <option value="">Please select</option>
+                  <option value="1">Available</option>
+                  <option value="0">Not available</option>
+
+              </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="productQuantity">Quantity</label>
+                <input type="number" class="form-control" name="price" value="5">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="productBrand">Brand</label>
+                <select class="form-control valid" name="brand" aria-describedby="val-skill-error" aria-invalid="false">
+                  <option value="">Please select</option>
+                  <option value="brand1">brand1</option>
+                  <option value="brand2">brand2</option>
+              </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productMainImage">Images</label>
+            <app-image-upload></app-image-upload>
+        </div>
+        <div class="form-group row">
+            <button type="button" class="btn  col btn-outline-success mr-1 mb-3 justify-content-center fs-3">
+            <i class="fa fa-fw fa-plus mr-1"></i> Add Product
+        </button>
+        </div>
+
+    </form>
+</div>

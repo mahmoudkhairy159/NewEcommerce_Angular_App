@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <form #createBrandForm="ngForm" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="brandEnglishName">Brand English Name</label>
+            <input type="text" class="form-control form-control-lg form-control-alt" ngModel name="name_en" placeholder="Enter Brand English Name">
+        </div>
+        <div class="form-group">
+            <label for="brandArabicName">Brand Arabic Name</label>
+            <input type="text" class="form-control form-control-lg form-control-alt" ngModel name="name_ar" placeholder="Enter Brand Arabic Name">
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="brandType">Type</label>
+                <select class="form-control valid" ngModel name="type" aria-describedby="val-skill-error" aria-invalid="false">
+          <option value="" selected disabled>Please select</option>
+          <option value="1">Men</option>
+          <option value="2">Women</option>
+          <option value="3">Kids</option>
+        </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="brandCategory">Category</label>
+                <select class="form-control valid" ngModel name="category" aria-describedby="val-skill-error" aria-invalid="false">
+                  <option value="" selected disabled >Please select</option>
+                  <option value="1">shirts</option>
+                  <option value="2">t-shirts</option>
+                  <option value="3">shorts</option>
+                  <option value="4">jeans</option>
+                  <option value="5">dresses</option>
+                  <option value="6">sports_wear</option>
+                  <option value="7">accessories</option>
+                  <option value="8">clothes</option>
+        </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="brandImage">Image</label>
+            <app-image-upload></app-image-upload>
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn  col btn-outline-success mr-1 mb-3 justify-content-center fs-3">
+        <i class="fa fa-fw fa-plus mr-1"></i> Add Brand
+      </button>
+        </div>
+
+    </form>
+</div>
