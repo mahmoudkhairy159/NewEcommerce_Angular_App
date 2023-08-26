@@ -21,7 +21,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CustomersComponent } from './admin/customers/customers.component';
 import { UpdateCustomerComponent } from './admin/customers/update-customer/update-customer.component';
 import { CreateCustomerComponent } from './admin/customers/create-customer/create-customer.component';
-import { PersonalInformationComponent } from './admin/customers/show-customer/personal-information/personal-information.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { RegisterComponent } from './register/register.component';
@@ -48,6 +47,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { OverviewComponent } from './admin/profile/overview/overview.component';
 import { AuthInterceptorService } from './admin/services/admin-auth/auth-interceptor.service';
+import { ShoppingCartComponent } from './admin/customers/show-customer/shopping-cart/shopping-cart.component';
+import { CustomerOrdersComponent } from './admin/customers/show-customer/customer-orders/customer-orders.component';
+import { PersonalInformationComponent } from './admin/customers/show-customer/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { AuthInterceptorService } from './admin/services/admin-auth/auth-interce
     SideOverlayComponent,
     SidebarComponent,
     PageHeaderComponent,
+    PersonalInformationComponent,
     DashboardMainComponent,
     DashboardFooterComponent,
     DashboardModalComponent,
@@ -73,7 +76,6 @@ import { AuthInterceptorService } from './admin/services/admin-auth/auth-interce
     CustomersComponent,
     UpdateCustomerComponent,
     CreateCustomerComponent,
-    PersonalInformationComponent,
     ProfileComponent,
     ForgetPasswordComponent,
     RegisterComponent,
@@ -90,6 +92,8 @@ import { AuthInterceptorService } from './admin/services/admin-auth/auth-interce
     CreateOrderComponent,
     UpdateOrderComponent,
     OverviewComponent,
+    ShoppingCartComponent,
+    CustomerOrdersComponent,
 
 
   ],

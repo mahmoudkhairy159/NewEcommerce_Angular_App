@@ -40,7 +40,6 @@ export class UpdateBrandComponent {
       type: this.updateBrandForm.value.type,
       photo:null,
     }
-    console.log(data);
     this.onUpdateBrand(data);
     this.updateBrandForm.reset();
   }

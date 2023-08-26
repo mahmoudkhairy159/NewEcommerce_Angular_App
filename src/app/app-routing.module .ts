@@ -34,6 +34,8 @@ import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
 import { OverviewComponent } from './admin/profile/overview/overview.component';
 import { AppComponent } from './app.component';
+import { ShoppingCartComponent } from './admin/customers/show-customer/shopping-cart/shopping-cart.component';
+import { CustomerOrdersComponent } from './admin/customers/show-customer/customer-orders/customer-orders.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -45,7 +47,7 @@ const routes: Routes = [
       { path: 'forgetPassword', component: ForgetPasswordComponent },
 
       {
-        path: 'dashboard', component: DashboardComponent, canActivate:[AdminAuthGuard],children: [
+        path: 'dashboard', component: DashboardComponent, canActivate: [AdminAuthGuard], children: [
           {
             path: 'profile', component: ProfileComponent, children: [
               { path: 'update/:id', component: UpdateProfileComponent },
@@ -73,10 +75,18 @@ const routes: Routes = [
             ]
           },
           {
-            path: 'customers', component: CustomersComponent, children: [
+            path: 'users', component: CustomersComponent, children: [
               { path: 'create', component: CreateCustomerComponent },
-              { path: 'update/:id', component: UpdateCustomerComponent },
-              { path: 'show/:id', component: ShowCustomerComponent },
+              { path: 'update/:id/:data', component: UpdateCustomerComponent },
+              {
+                path: 'show/:id', component: ShowCustomerComponent, children: [
+                  { path: '', component: PersonalInformationComponent },
+                  { path: 'shoppingCart', component: ShoppingCartComponent },
+                  { path: 'orders', component: CustomerOrdersComponent },
+                  { path: 'update/:data', component:UpdateCustomerComponent  },
+
+                ]
+              },
               { path: '', component: ShowCustomersComponent },
 
             ]
@@ -107,4 +117,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

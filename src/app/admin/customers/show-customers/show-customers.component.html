@@ -1,6 +1,6 @@
 <div class="block-content">
-    <button type="button" class="btn btn-success btn-outline-light mr-1 mb-3" [routerLink]="['/admin/dashboard/customers/create']">
-    <i class="fa fa-fw fa-plus mr-1"></i> New Customer
+    <button type="button" class="btn btn-success btn-outline-light mr-1 mb-3" [routerLink]="['/admin/dashboard/users/create']">
+    <i class="fa fa-fw fa-plus mr-1"></i> New user
 </button>
 
     <div class="table-responsive">
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
 
-                <tr *ngFor="let customer of customers; let i=index">
+                <tr *ngFor="let user of users; let i=index">
                     <td class="text-center">
                         {{i+1}}
                     </td>
@@ -28,25 +28,25 @@
                         <img class="img-avatar img-avatar48" src="../assets/themes/my-theme/media/photos/photo1.jpg" alt=" ">
                     </td>
                     <td class="font-w600 font-size-sm ">
-                        <a>{{ customer.name }}</a>
+                        <a>{{ user.name }}</a>
                     </td>
                     <td class="font-w600 font-size-sm ">
-                        <a>{{ customer.email }}</a>
+                        <a>{{ user.email }}</a>
                     </td>
                     <td class="font-w600 font-size-sm ">
-                        <a> {{ customer.phone }}</a>
+                        <a> {{ user.phone }}</a>
                     </td>
-                    <td class="font-size-sm ">{{ customer.address}} </td>
+                    <td class="font-size-sm ">{{ user.address}} </td>
 
                     <td class="text-center ">
                         <div class="btn-group ">
-                            <button type="button " class="btn btn-sm btn-primary " title="Show" [routerLink]="['/admin/dashboard/customers/show',customer.id]">
+                            <button type="button " class="btn btn-sm btn-primary " title="Show" [routerLink]="['/admin/dashboard/users/show',user.id]">
             <i class="fas fa-eye " ></i>
           </button>
-                            <button type="button " class="btn btn-sm btn-primary " title="Edit" [routerLink]="['/admin/dashboard/customers/update',customer.id]">
+                            <button type="button " class="btn btn-sm btn-primary " title="Edit" [routerLink]="['/admin/dashboard/users/update',user.id,sendData(user)]">
             <i class="fa fa-fw fa-pencil-alt "></i>
           </button>
-                            <button type="button " class="btn btn-sm btn-primary " title="Delete">
+                            <button type="button " class="btn btn-sm btn-primary" (click)="onDeleteBrand(user.id)" title="Delete">
             <i class="fa fa-fw fa-times "></i>
           </button>
                         </div>

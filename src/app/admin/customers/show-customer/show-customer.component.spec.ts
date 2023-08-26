@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowCustoemrComponent } from './show-customer.component';
+import { ShowCustomrComponent } from './show-customer.component';
 
 describe('ShowCustoemrComponent', () => {
   let component: ShowCustoemrComponent;

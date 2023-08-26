@@ -15,10 +15,10 @@ export class CreateBrandComponent {
   brand: Brand;
   brandData = {
     name_ar: '',
-    "name_en":'',
-    "category": '',
-    "type": '',
-    "photo": ''
+    name_en:'',
+    category: '',
+    type: '',
+    photo: ''
   };
 
   constructor(private adminBrandsService:AdminBrandsService,private router: Router){}
